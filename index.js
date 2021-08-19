@@ -1,6 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer')
 
+const questions = () => {
 inquirer
   .prompt([
     {
@@ -46,5 +47,67 @@ inquirer
       "Mozilla",
       "Open"],
     },
-       
+    {
+      type: 'input',
+      message: 'What is your GitHub username?',
+      name: 'github',
+    }, 
+    {
+      type: 'input',
+      message: 'What is your email for further questions?',
+      name: 'email',
+    },    
   ])
+}
+
+const generateReadMe = (answer) => 
+  `
+  # <${answer.title}>
+
+  ## Description
+
+  ${answer.description}
+
+  ## Table of Contents
+  -[Installation](#installation)
+  -[Usage](#usage)
+  -[License](#license)
+  -[Contributing](#contributing)
+  -[Tests](#tests)
+  -[Questions](#questions)
+
+  ## Installation
+
+  ${answer.installation}
+
+  ## Usage
+
+  ${answer.usage}
+
+  ## License
+
+  ${answer.license}
+
+  ## Contributing
+
+  ${answer.contributors}
+
+  ## Tests
+
+  ${answer.testing}
+
+  ## Questions
+
+  https://github.com/${answer.github}
+  ${answer.email}
+
+  `;
+
+  // const start = () => {
+  //   questions()
+  //     .then((answer) => )
+  // }
+
+
+  // .then((data) => console.log(data))
+
