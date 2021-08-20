@@ -64,19 +64,23 @@ return inquirer
 
 const generateReadMe = (answer) => 
   `
-  # <${answer.title}>
+   <h1 align="center"> # ${answer.title} </h1>
+
+   ![Badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen) 
+   
+   <br />
 
   ## Description
 
   ${answer.description}
 
   ## Table of Contents
-  -[Installation](#installation)
-  -[Usage](#usage)
-  -[License](#license)
-  -[Contributing](#contributing)
-  -[Tests](#tests)
-  -[Questions](#questions)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
 
   ## Installation
 
@@ -88,7 +92,11 @@ const generateReadMe = (answer) =>
 
   ## License
 
-  ${answer.license}
+  ![Badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen) 
+
+  <br />
+
+  This application is covered under the ${answer.license} license.
 
   ## Contributing
 
