@@ -1,29 +1,37 @@
 
-  # <Read Me Generator>
+   <h1 text-align="center"> # Read Me Generator </h1>
+
+   ![Badge]((https://img.shields.io/badge/license-MIT-brightgreen) 
+   
+   <br />
 
   ## Description
 
-  This is a tool that will help formulate a well written ReadMe for your projects
+  This is a tool to make writing a good ReadMe file for your projects easier.
 
   ## Table of Contents
-  -[Installation](#installation)
-  -[Usage](#usage)
-  -[License](#license)
-  -[Contributing](#contributing)
-  -[Tests](#tests)
-  -[Questions](#questions)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
 
   ## Installation
 
-  1. npm init 2. npm install inquirer
+  1. npm init 2. npm install
 
   ## Usage
 
-  Will be invoked using node index.js
+  NA
 
   ## License
 
-  MIT
+  ![Badge]((https://img.shields.io/badge/license-MIT-brightgreen) 
+
+  <br />
+
+  This application is covered under the MIT license.
 
   ## Contributing
 
@@ -37,6 +45,6 @@
 
   https://github.com/JMonRom
 
-  montes01@ucsb.edu
+  jmontes8686@gmail.com
 
   

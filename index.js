@@ -64,7 +64,7 @@ return inquirer
 
 const generateReadMe = (answer) => 
   `
-   <h1 align="center"> # ${answer.title} </h1>
+   <h1 text-align="center"> # ${answer.title} </h1>
 
    ![Badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen) 
    
