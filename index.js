@@ -1,8 +1,10 @@
 const fs = require('fs');
-const inquirer = require('inquirer')
+const inquirer = require('inquirer');
+const util = require('util');
+const writeFileSync = util.promisify(fs.writeFile);
 
 const questions = () => {
-inquirer
+return inquirer
   .prompt([
     {
       type: 'input',
@@ -99,15 +101,18 @@ const generateReadMe = (answer) =>
   ## Questions
 
   https://github.com/${answer.github}
+
   ${answer.email}
 
   `;
 
-  // const start = () => {
-  //   questions()
-  //     .then((answer) => )
-  // }
+  const start = () => {
+    questions()
+      .then((answer) =>
 
-
-  // .then((data) => console.log(data))
-
+      writeFileSync('READMEoutput.md', generateReadMe(answer))
+      ) .then(() => console.log('ReadMe created succesfully!'))
+      .catch((err) => console.error(err));
+  }
+  
+  start();
