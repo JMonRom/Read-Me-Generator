@@ -7,7 +7,7 @@
 
   ## Description
 
-  This is a tool to make writing a good ReadMe file for your projects easier.
+  This is a tool to help write a good ReadMe file for your project.
 
   ## Table of Contents
   - [Installation](#installation)
@@ -19,11 +19,11 @@
 
   ## Installation
 
-  1. npm init 2. npm install
+  1. npm init 2. npm install inquirer
 
   ## Usage
 
-  NA
+  To invoke the application run the following command: node index.js
 
   ## License
 
