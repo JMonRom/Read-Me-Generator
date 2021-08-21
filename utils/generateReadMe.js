@@ -1,11 +1,9 @@
 function generateReadMe(answer) {
   return `
 
-   <h1 align="center"> # ${answer.title} </h1>
+   <h1 align="center"># ${answer.title} </h1>
 
-  ![Badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen)
-   
-   <br />
+  ![badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen) <br />
 
   ## Description
 
@@ -29,7 +27,7 @@ function generateReadMe(answer) {
 
   ## License
 
-  ![Badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen) 
+  ![badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen) 
 
   <br />
 
