@@ -62,11 +62,12 @@ return inquirer
   ])
 }
 
-const generateReadMe = (answer) => 
+const generateReadMe = (answer) => {
+  return  `![Badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen)`
   `
-   <h1 text-align="center"> # ${answer.title} </h1>
+   <h1 align="center"> # ${answer.title} </h1>
 
-   ![Badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen) 
+  
    
    <br />
 
@@ -75,12 +76,12 @@ const generateReadMe = (answer) =>
   ${answer.description}
 
   ## Table of Contents
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
 
   ## Installation
 
@@ -112,7 +113,7 @@ const generateReadMe = (answer) =>
 
   ${answer.email}
 
-  `;
+  `;}
 
   const start = () => {
     questions()
@@ -122,5 +123,7 @@ const generateReadMe = (answer) =>
       ) .then(() => console.log('ReadMe created succesfully!'))
       .catch((err) => console.error(err));
   }
+
+
   
   start();
