@@ -1,9 +1,10 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const util = require('util');
-const writeFileSync = util.promisify(fs.writeFile);
+const generateReadMe = require('./utils/generateReadMe');
+const writeFileAsync = util.promisify(fs.writeFile);
 
-const questions = () => {
+function questions() {
 return inquirer
   .prompt([
     {
@@ -62,68 +63,18 @@ return inquirer
   ])
 }
 
-const generateReadMe = (answer) => {
-  return  `![Badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen)`
-  `
-   <h1 align="center"> # ${answer.title} </h1>
+async function init() {
+  try { 
+   const answers = await questions();
+   const generateFile = generateReadMe(answers);
 
+   await writeFileAsync('./file/READMEoutput.md', generateFile) 
+
+   console.log('ReadMe created succesfully!');
   
-   
-   <br />
-
-  ## Description
-
-  ${answer.description}
-
-  ## Table of Contents
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [License](#license)
-  * [Contributing](#contributing)
-  * [Tests](#tests)
-  * [Questions](#questions)
-
-  ## Installation
-
-  ${answer.installation}
-
-  ## Usage
-
-  ${answer.usage}
-
-  ## License
-
-  ![Badge]((https://img.shields.io/badge/license-${answer.license}-brightgreen) 
-
-  <br />
-
-  This application is covered under the ${answer.license} license.
-
-  ## Contributing
-
-  ${answer.contributors}
-
-  ## Tests
-
-  ${answer.testing}
-
-  ## Questions
-
-  https://github.com/${answer.github}
-
-  ${answer.email}
-
-  `;}
-
-  const start = () => {
-    questions()
-      .then((answer) =>
-
-      writeFileSync('READMEoutput.md', generateReadMe(answer))
-      ) .then(() => console.log('ReadMe created succesfully!'))
-      .catch((err) => console.error(err));
+  } catch(err) {
+    console.error(err);
   }
+ }
 
-
-  
-  start();
+init();
