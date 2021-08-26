@@ -4,6 +4,7 @@ const util = require('util');
 const generateReadMe = require('./utils/generateReadMe');
 const writeFileAsync = util.promisify(fs.writeFile);
 
+// Questions will be called from this function
 function questions() {
 return inquirer
   .prompt([
@@ -65,10 +66,12 @@ return inquirer
 
 async function init() {
   try { 
+    // Waits until questions have been answered to store 
    const answers = await questions();
    const generateFile = generateReadMe(answers);
 
-   await writeFileAsync('./file/READMEoutput.md', generateFile) 
+  //  write file and knows where to place generated file
+   await writeFileAsync('./readme/READMEoutput.md', generateFile) 
 
    console.log('ReadMe created succesfully!');
   

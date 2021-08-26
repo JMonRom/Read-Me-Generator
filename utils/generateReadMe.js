@@ -1,9 +1,10 @@
+// Followed professional readme guide to create a function containg good readme layout
 function generateReadMe(answer) {
   return `
 
    <h1 align="center"># ${answer.title} </h1>
-
-  ![badge](https://img.shields.io/badge/license-${answer.license}-brightgreen) <br />
+  
+  ![badge](https://img.shields.io/badge/license-${answer.license}-red) <br />
 
   ## Description
 
@@ -27,7 +28,7 @@ function generateReadMe(answer) {
 
   ## License
 
-  ![badge](https://img.shields.io/badge/license-${answer.license}-brightgreen) 
+  ![badge](https://img.shields.io/badge/license-${answer.license}-red) 
 
   <br />
 
